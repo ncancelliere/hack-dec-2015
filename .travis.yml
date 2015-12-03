@@ -4,5 +4,3 @@ rvm:
 addons:
   artifacts: true
   s3_region: "us-west-1"
-  paths:
-    - $(git ls-files -o | grep 'rubycritic' | tr "\n" ":")
