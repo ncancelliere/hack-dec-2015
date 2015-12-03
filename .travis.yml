@@ -4,5 +4,5 @@ rvm:
 addons:
   artifacts:
     paths:
-      - ".tmp/rubycritic"
+      - "tmp/rubycritic"
   s3_region: "us-west-1"
