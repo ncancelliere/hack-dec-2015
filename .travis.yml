@@ -4,11 +4,10 @@ rvm:
 addons:
   artifacts:
     paths:
-      - "tmp/rubycritic"
-      - "tmp/sandimeter"
-    target_paths: '/'
+      - "tmp/code_analysis"
+    target_paths: '/code_analysis'
   s3_region: us-east-1
 script:
   - bundle exec rake
-  - bundle exec rubycritic app lib
-  - bundle exec sandi_meter -g -q --output-path tmp/sandimeter
+  - bundle exec rubycritic app lib -p tmp/code_analysis/rubycritic
+  - bundle exec sandi_meter -g -q --output-path tmp/code_analysis/sandimeter
