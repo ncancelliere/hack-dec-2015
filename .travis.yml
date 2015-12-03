@@ -10,4 +10,3 @@ addons:
 script:
   - bundle exec rake
   - bundle exec rubycritic app lib -p tmp/code_analysis/rubycritic
-  - bundle exec sandi_meter -g -q --output-path tmp/code_analysis/sandimeter
