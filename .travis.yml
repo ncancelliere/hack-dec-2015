@@ -7,4 +7,4 @@ addons:
       - "tmp/rubycritic"
   s3_region: "us-west-1"
 after_script:
-  - bundle exec rubycritic
+  - bundle exec rubycritic app lib
