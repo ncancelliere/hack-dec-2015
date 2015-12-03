@@ -37,6 +37,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'rubycritic'
+  gem 'sandi_meter'
 end
 
 group :development do

@@ -5,9 +5,10 @@ addons:
   artifacts:
     paths:
       - "tmp/rubycritic"
-    target_paths: '/rubycritic'
+      - "tmp/sandimeter"
+    target_paths: '/'
   s3_region: us-east-1
-  debug: true
 script:
   - bundle exec rake
   - bundle exec rubycritic app lib
+  - bundle exec sandi_meter -g -q --output-path tmp/sandimeter
