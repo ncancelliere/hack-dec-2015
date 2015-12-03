@@ -3,6 +3,6 @@ rvm:
   - 2.2.3
 addons:
   artifacts: true
-    s3_region: "us-west-1"
     paths:
       - ".tmp/rubycritic"
+  s3_region: "us-west-1"
