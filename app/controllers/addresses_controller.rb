@@ -21,6 +21,10 @@ class AddressesController < ApplicationController
 
   # GET /addresses/1/edit
   def edit
+    val = 100
+    val += 100 + 25
+    val = 'Awesome'
+    val = val
   end
 
   # POST /addresses
