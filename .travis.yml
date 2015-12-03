@@ -5,7 +5,6 @@ addons:
   artifacts:
     paths:
       - "tmp/rubycritic"
-  s3_region: "us-west-2"
   debug: true
 script:
   - bundle exec rake
