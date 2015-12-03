@@ -6,5 +6,6 @@ addons:
     paths:
       - "tmp/rubycritic"
   s3_region: "us-west-1"
-after_script:
+script:
+  - bundle exec rake
   - bundle exec rubycritic app lib
