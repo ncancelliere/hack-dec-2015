@@ -1,5 +1,7 @@
+# Handles all the requets for the Address resource(s)
 class AddressesController < ApplicationController
   before_action :set_address, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :json
 
   # GET /addresses
   # GET /addresses.json
@@ -24,31 +26,15 @@ class AddressesController < ApplicationController
   # POST /addresses
   # POST /addresses.json
   def create
-    @address = Address.new(address_params)
-
-    respond_to do |format|
-      if @address.save
-        format.html { redirect_to @address, notice: 'Address was successfully created.' }
-        format.json { render :show, status: :created, location: @address }
-      else
-        format.html { render :new }
-        format.json { render json: @address.errors, status: :unprocessable_entity }
-      end
-    end
+    @address = Address.create(address_params)
+    respond_with @address, location: @address
   end
 
   # PATCH/PUT /addresses/1
   # PATCH/PUT /addresses/1.json
   def update
-    respond_to do |format|
-      if @address.update(address_params)
-        format.html { redirect_to @address, notice: 'Address was successfully updated.' }
-        format.json { render :show, status: :ok, location: @address }
-      else
-        format.html { render :edit }
-        format.json { render json: @address.errors, status: :unprocessable_entity }
-      end
-    end
+    @address.update(address_params)
+    respond_with @address, location: @address
   end
 
   # DELETE /addresses/1
@@ -71,4 +57,5 @@ class AddressesController < ApplicationController
     def address_params
       params.require(:address).permit(:street_1, :street_2, :city, :state, :zip, :country, :contact_id)
     end
+
 end

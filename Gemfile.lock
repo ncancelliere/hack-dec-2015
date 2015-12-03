@@ -146,6 +146,8 @@ GEM
       private_attr (~> 1.1)
       rainbow (~> 2.0)
       unparser (~> 0.2.2)
+    responders (2.1.0)
+      railties (>= 4.2.0, < 5)
     rspec-core (3.4.1)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
@@ -232,6 +234,7 @@ DEPENDENCIES
   jquery-rails
   mysql2 (>= 0.3.13, < 0.5)
   rails (= 4.2.5)
+  responders
   rspec-rails
   rubycritic
   sandi_meter

@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :json
 
   # GET /contacts
   # GET /contacts.json
@@ -24,31 +25,15 @@ class ContactsController < ApplicationController
   # POST /contacts
   # POST /contacts.json
   def create
-    @contact = Contact.new(contact_params)
-
-    respond_to do |format|
-      if @contact.save
-        format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
-        format.json { render :show, status: :created, location: @contact }
-      else
-        format.html { render :new }
-        format.json { render json: @contact.errors, status: :unprocessable_entity }
-      end
-    end
+    @contact = Contact.create(contact_params)
+    respond_with @contact, location: @contact
   end
 
   # PATCH/PUT /contacts/1
   # PATCH/PUT /contacts/1.json
   def update
-    respond_to do |format|
-      if @contact.update(contact_params)
-        format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
-        format.json { render :show, status: :ok, location: @contact }
-      else
-        format.html { render :edit }
-        format.json { render json: @contact.errors, status: :unprocessable_entity }
-      end
-    end
+    @contact.update(contact_params)
+    respond_with @contact, location: @contact
   end
 
   # DELETE /contacts/1
